@@ -54,6 +54,20 @@ class Order(models.Model):
 	class Meta():
 		db_table = "Order"
 
+#Order_Product table
+class Order_Product(models.Model):
+	order = models.ForeignKey(Order, verbose_name = "Заказчик")
+	product = models.ForeignKey(Product, verbose_name = "Наименование товара")
+	kol_product = models.IntegerField(default = 0, verbose_name = "Количество товара")
+	sum_product = models.FloatField(default = 0, verbose_name = "Сумма, у. е.")
+
+	def __unicode__(self):
+		return u'%s' % self.product
+
+	class Meta():
+		db_table = "Order_Product"
+
+
 #Images table
 class Image(models.Model):
 	product = models.OneToOneField(Product)

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from django.contrib import admin
-from article.models import Customer, Order, Product, Image, Category
+from article.models import Customer, Order, Product, Image, Category, Order_Product
 
 # Register your models here.
 
@@ -10,7 +10,7 @@ class CustomerInline(admin.StackedInline):
 	extra = 1
 
 class OrderInline(admin.StackedInline):
-	model = Order.products.through
+	model = Order_Product #Order.products.through
 	extra = 1
 
 class CategoryInline(admin.StackedInline):
