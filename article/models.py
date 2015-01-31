@@ -66,8 +66,7 @@ class Order_Product(models.Model):
 
 	class Meta():
 		db_table = "Order_Product"
-
-
+					
 #Images table
 class Image(models.Model):
 	product = models.OneToOneField(Product)
