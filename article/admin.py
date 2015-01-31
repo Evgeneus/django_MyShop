@@ -17,7 +17,9 @@ class CategoryInline(admin.StackedInline):
 	model = Product
 	extra = 1
 
-
+class ProductInline(admin.StackedInline):
+	model = Image
+	extra = 1
 
 
 class CustomerAdmin(admin.ModelAdmin):
@@ -29,7 +31,7 @@ class CustomerAdmin(admin.ModelAdmin):
 class ProductAdmin(admin.ModelAdmin):
 	fields = ['product_title', 'description', 'price_ye', 'amount', 'product_category']
 	list_filter = ['amount']
-
+	inlines = [ProductInline]
 
 class OrderAdmin(admin.ModelAdmin):
 	fields = ['order_date', 'orders_sum', 'order_customer']
