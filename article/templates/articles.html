@@ -11,24 +11,12 @@
    
  	{% for product in product_all %}
   	<div class="col-lg-3 col-sl-offset-1">
-  		<h2> {{ producte.product_title }} </h2>
-	  	<p> {{ product.description }} </p>
-	  	<p> {{ product.price_ye }} </p>
-	  	<p> {{ product.amount }} </p>
-	 	<p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
+  		<h3 > {{ product.product_title }} </h3>
+  		<img src="{{ product.image.top_image.url }}" width="150px" height="150px">
+	  	<p> Количество на складе: {{ product.amount }} </p>	
+	  	<p> Цена: {{ product.price_ye }} у.е.</p>
+	 	<p><a class="btn btn-primary" href="#" role="button">Подробнее &raquo;</a></p>
   	</div>
   	{% endfor %}
-
-    {% for image in product_images %}
-    <div>
-     	<img src="{{ image.top_image.url }}" width="150px" height="150px">
-    </div>
-    {% endfor %}
-
-
-  	<!-- Site footer -->
- 	<div class="footer">
-    	<p>&copy; Company 2015</p>
-  	</div>
 
 {% endblock %}
