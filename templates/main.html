@@ -49,7 +49,7 @@
             <h3>Каталог</h3>
             <ol class="list-unstyled sidebar-module-inset-2">
                 {% for category in product_categories %}
-                    <li class="nav-header"><a href="#"> {{ category.category }} </a></li>
+                    <li class="nav-header"><a href="/articles/get_category/{{ category.id }}"> {{ category.category }} </a></li>
                 {% endfor %}
             </ol>
         </div>
@@ -67,6 +67,7 @@
     
     {% block articles %} {% endblock %}
     {% block article %} {% endblock %}
+    {% block categorys_product_display %} {% endblock %}
 
 </div>
     <!-- Site footer -->

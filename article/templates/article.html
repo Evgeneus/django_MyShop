@@ -2,7 +2,7 @@
 {% load staticfiles %}
 
 {% block article %}
-	<div class="col-lg-10 ">
+	<div class="col-lg-10 col-sl-offset-1">
 		<h3>{{ product.product_title}}</h3>
 		<img src="{{ product.image.top_image.url }}" class="img-thumbnail" width="300px" height="300px" class="col-lg-4" align="left">
 		<div 	>
@@ -10,7 +10,5 @@
 			<p>Цена: {{ product.price_ye }}   у. е.</p>
 			<p>На складе: {{ product.amount }} единиц.</p>
 		</div>
-
-
 	</div>
 {% endblock %}
